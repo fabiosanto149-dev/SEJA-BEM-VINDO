@@ -2,21 +2,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruany | Account Manager Vivo Empresas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Fábio Lourenço | Portfolio Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Cores com tendência feminina e profissional */
-            --primary: #ff00cc; /* Magenta Vivo */
-            --secondary: #6600ff; /* Violeta Profundo */
-            --accent: #ffb7c5; /* Rose Gold */
-            --dark: #0f0a14;
-            --glass: rgba(255, 255, 255, 0.03);
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --dark: #0a0a0b;
+            --glass: rgba(255, 255, 255, 0.05);
             --border: rgba(255, 255, 255, 0.1);
         }
 
         * {
-            margin: 0; padding: 0; box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
@@ -27,28 +27,34 @@
             overflow-x: hidden;
         }
 
-        /* Fundo com efeito de névoa colorida */
+        /* Fundo Animado Surreal */
         body::before {
             content: "";
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 80% 20%, #2a1b3d 0%, #0f0a14 100%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a0b 100%);
             z-index: -1;
         }
 
-        .glow-effect {
+        .glow {
             position: absolute;
-            width: 400px; height: 400px;
-            background: var(--primary);
-            filter: blur(180px);
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+            filter: blur(150px);
             border-radius: 50%;
-            opacity: 0.15;
-            top: -100px; left: -100px;
-            animation: pulse 8s infinite alternate;
+            opacity: 0.2;
+            top: 10%;
+            right: 10%;
+            animation: move 10s infinite alternate;
         }
 
-        @keyframes pulse {
-            to { transform: scale(1.2); opacity: 0.2; }
+        @keyframes move {
+            from { transform: translate(0, 0); }
+            to { transform: translate(-100px, 100px); }
         }
 
         header {
@@ -56,7 +62,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0 8%;
+            padding: 0 5%;
         }
 
         .container {
@@ -65,154 +71,141 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
+            gap: 50px;
         }
 
-        /* Foto com borda orgânica e suave */
-        .profile-wrapper {
+        /* Imagem com Efeito de Bordas Brilhantes */
+        .profile-area {
             position: relative;
+            width: 400px;
+            height: 400px;
         }
 
         .profile-img {
-            width: 380px;
-            height: 480px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            border: 2px solid var(--border);
-            box-shadow: 0 0 50px rgba(255, 0, 204, 0.2);
-            animation: morph 10s ease-in-out infinite;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            border: 4px solid var(--border);
+            box-shadow: 0 0 40px rgba(79, 172, 254, 0.3);
+            animation: morph 8s ease-in-out infinite;
         }
 
         @keyframes morph {
-            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-        }
-
-        .content h2 {
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
         }
 
         .content h1 {
-            font-size: 4rem;
-            line-height: 1;
+            font-size: 3.5rem;
+            line-height: 1.1;
             margin-bottom: 20px;
         }
 
         .content h1 span {
-            background: linear-gradient(to right, var(--primary), var(--accent));
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .description {
-            font-size: 1.1rem;
-            color: #ccc;
-            max-width: 500px;
-            margin-bottom: 35px;
-        }
-
-        .cta-button {
-            padding: 18px 45px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 15px;
-            transition: 0.3s;
+        .contact-btn {
             display: inline-block;
-            box-shadow: 0 10px 30px rgba(255, 0, 204, 0.3);
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.4);
         }
 
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 0, 204, 0.5);
+        .contact-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(79, 172, 254, 0.6);
         }
 
-        /* Seção de Excelência */
-        .excellence-section {
-            padding: 100px 8%;
+        /* Seção de Excelência (Cards de Vidro) */
+        .section-title {
             text-align: center;
+            font-size: 2.5rem;
+            margin: 100px 0 50px;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
+            gap: 30px;
+            padding: 0 10% 100px;
         }
 
-        .glass-card {
+        .card {
             background: var(--glass);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(15px);
             border: 1px solid var(--border);
-            padding: 45px;
-            border-radius: 30px;
-            transition: 0.5s;
+            padding: 40px;
+            border-radius: 20px;
+            transition: 0.4s;
+            cursor: default;
         }
 
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.07);
+        .card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-10px);
             border-color: var(--primary);
-            transform: scale(1.03);
         }
 
-        .glass-card h3 {
+        .card h3 {
+            color: var(--primary);
             margin-bottom: 15px;
-            color: var(--accent);
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
             .container { flex-direction: column-reverse; text-align: center; }
-            .profile-img { width: 300px; height: 350px; }
-            .content h1 { font-size: 2.8rem; }
+            .profile-area { width: 280px; height: 280px; }
+            .content h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
-    <div class="glow-effect"></div>
+    <div class="glow"></div>
 
     <header>
         <div class="container">
             <div class="content">
-                <h2>Vivo Empresas</h2>
-                <h1>Olá, eu sou <span>Ruany</span></h1>
-                <p class="description">Gerente de Contas B2B focada em transformar a conectividade do seu negócio com <b>eficiência máxima</b> e <b>qualidade de serviço surreal</b>.</p>
-                <a href="tel:2730619962" class="cta-button">Solicitar Consultoria</a>
+                <p>Análise e Desenvolvimento de Sistemas</p>
+                <h1>Olá, eu sou o <br><span>Fábio Lourenço</span></h1>
+                <p>Especialista em criar experiências digitais de alta performance e sites de excelência.</p>
+                <a href="https://wa.me/27988080831" class="contact-btn">WhatsApp: 27 98808-0831</a>
             </div>
-            <div class="profile-wrapper">
-                <img src="ruany.jpg" alt="Ruany" class="profile-img">
+            <div class="profile-area">
+                <img src="perfil.jpg" alt="Fábio Lourenço" class="profile-img">
             </div>
         </div>
     </header>
 
-    <section class="excellence-section">
-        <h1>Opções de <span>Excelência</span></h1>
-        <div class="grid">
-            <div class="glass-card">
-                <h3>Atendimento Prime</h3>
-                <p>Gestão personalizada de contas corporativas, garantindo que cada solução seja moldada para o crescimento da sua empresa.</p>
-            </div>
-            <div class="glass-card">
-                <h3>Eficiência Operacional</h3>
-                <p>Otimização de custos e implementação ágil de serviços de dados, voz e nuvem com o padrão Vivo de qualidade.</p>
-            </div>
-            <div class="glass-card">
-                <h3>Suporte Dedicado</h3>
-                <p>Acompanhamento ponta a ponta para garantir que a tecnologia trabalhe a favor da sua produtividade, sem interrupções.</p>
-            </div>
+    <h2 class="section-title">Opções de Excelência</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Desenvolvimento Web</h3>
+            <p>Criação de sites modernos, responsivos e otimizados para conversão.</p>
         </div>
-    </section>
+        <div class="card">
+            <h3>Análise de Sistemas</h3>
+            <p>Soluções inteligentes e arquitetura de dados pensada na escalabilidade.</p>
+        </div>
+        <div class="card">
+            <h3>Design Surreal</h3>
+            <p>Interface do usuário (UI) focada em estética moderna e usabilidade (UX).</p>
+        </div>
+    </div>
 
-    <section class="excellence-section">
-        <h1> SOBRE <span>MIM</span></h1>
-        <p class="description" style="margin: 0 auto;">
-            Sou especialista em soluções corporativas na Vivo Empresas, onde atuo como ponte entre a tecnologia de ponta e o sucesso dos meus clientes. Minha missão é entregar excelência através de um olhar estratégico, garantindo que cada empresa parceira tenha a melhor performance do mercado.
-        </p>
-    </section>
+    <h2 class="section-title" id="sobre">SOBRE MIM</h2>
+    <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 0 20px 100px; line-height: 1.8;">
+        <p>Sou um profissional apaixonado por tecnologia e inovação, atualmente focado em Análise e Desenvolvimento de Sistemas. Minha trajetória une a visão estratégica de negócios com a precisão técnica da engenharia de software. Busco sempre entregar projetos que não apenas funcionem, mas que superem as expectativas em estética e funcionalidade.</p>
+    </div>
 
 </body>
 </html>
